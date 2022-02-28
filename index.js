@@ -25,11 +25,11 @@ console.log(chalk.green(`Your token is: ${config.token.substring(0,4)}...`));
 if (process.env.NODE_ENV != 'test')
 {
 	(async () => {
-		// await listAuthenicatedUserRepos();
-		// await listBranches(userId, "REST");
-		// await createRepo(userId,"newrepo");
-		// await createIssue(userId, "REST", "Issue Name", "Issue Body");
-		// await enableWikiSupport(userId, "REST");
+		await listAuthenicatedUserRepos();
+		await listBranches(userId, "REST");
+		await createRepo(userId,"newrepo");
+		await createIssue(userId, "REST", "Issue Name", "Issue Body");
+		await enableWikiSupport(userId, "REST");
 
 	})()
 }
@@ -114,7 +114,6 @@ async function listBranches(owner,repo)
 				var name = obj[i].name;
 				console.log( name );
 			}
-
 			// Return object for people calling our method.
 			resolve( obj );
 		});
@@ -139,17 +138,8 @@ async function createRepo(owner,repo)
 				return; // Terminate execution.
 			}
 
-			console.log(response.body);
-
-			var obj = JSON.parse(body);
-			for( var i = 0; i < obj.length; i++ )
-			{
-				var name = obj[i].name;
-				console.log( name );
-			}
-
 			// Return object for people calling our method.
-			resolve( obj );
+			resolve( response.statusCode );
 		});
 	});
 }
@@ -171,17 +161,8 @@ async function createIssue(owner,repo, issueName, issueBody)
 				return; // Terminate execution.
 			}
 
-			console.log(response.body);
-
-			var obj = JSON.parse(body);
-			for( var i = 0; i < obj.length; i++ )
-			{
-				var name = obj[i].name;
-				console.log( name );
-			}
-
 			// Return object for people calling our method.
-			resolve( obj );
+			resolve( response.statusCode );
 		});
 	});
 }
@@ -204,17 +185,8 @@ async function enableWikiSupport(owner,repo)
 				return; // Terminate execution.
 			}
 
-			console.log(response.body);
-
-			var obj = JSON.parse(body);
-			for( var i = 0; i < obj.length; i++ )
-			{
-				var name = obj[i].name;
-				console.log( name );
-			}
-
 			// Return object for people calling our method.
-			resolve( obj );
+			resolve( response.body );
 		});
 	});
 }
