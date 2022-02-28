@@ -1,3 +1,9 @@
+# Submission
+
+My submission features fully functional solutions for both parts of the assignment. In the first part, I was successfully able to make functions that access my GitHub repositories, create a new repository on an organization's page (I used [Vinny2-4](https://github.com/Vinny2-4) as a sample organization), and modify certain properties/elements on GitHub repos. All tests included in `test.js` as provided were passed except for the test of `listBranches`. This was because `listBranches` produces its list of branches such that the `main` branch was last in the list, while the provided test script assumed that it would be the first. With a simple modification to the script (as seen in this submission), though, that issue was resolved.
+
+In the second part of the assignment, I used the provided scripts and code snippets to successfully demonstrate a simple REST server, with the ability to post content to the server that gets read once before deletion. This demonstration can be found [here](https://youtu.be/4J8KvzT9_Yc).
+
 # Introduction
 
 A *RESTful architecture*, is an architectural style ([Fielding](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)) for providing resources to clients using a set of request verbs and resource locations. A REST API allows a client to access resources provided by a service.
